@@ -18,6 +18,8 @@ int main(int argc, char** argv) {
 	vector< vector<double> > adjMat;
 	readMatrix( N[dataId-1], dataId, adjMat );
 
+	printf( "Nodes Number: %d, Alpha: %d, Beta: %d\n\n", N[dataId - 1], alpha, beta );
+
 	GreedySearch greedySearch = GreedySearch( adjMat, N[dataId - 1], alpha, beta );
 	greedySearch.search();
 	printRoute( adjMat, greedySearch.bestRoute );

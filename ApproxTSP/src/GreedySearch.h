@@ -3,6 +3,7 @@
 
 #include <vector>
 #include <iostream>
+#include <ctime>
 #include "utils.h"
 
 using namespace std;

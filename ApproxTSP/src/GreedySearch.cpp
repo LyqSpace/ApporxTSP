@@ -13,6 +13,8 @@ GreedySearch::GreedySearch( const vector< vector<double> > &_adjMat, int _N, int
 
 void GreedySearch::search() {
 
+	clock_t time_st = clock();
+
 	double bestConf = 0;
 	vector<int> bestVisited;
 
@@ -50,5 +52,8 @@ void GreedySearch::search() {
 	}
 
 	findRoute( bestVisited, bestRoute );
+
+	clock_t time_ed = clock();
+	cout << "Time: " << time_ed - time_st << "ms" << endl;
 
 }

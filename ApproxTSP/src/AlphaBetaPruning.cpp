@@ -47,6 +47,8 @@ double AlphaBetaPruning::evalNode( Node rootNode ) {
 
 void AlphaBetaPruning::search() {
 
+	clock_t time_st = clock();
+
 	double maxConf = 0;
 	vector<int> bestVisited;
 	queue<Node> que;
@@ -102,5 +104,8 @@ void AlphaBetaPruning::search() {
 	}
 
 	findRoute( que.front().visited, bestRoute );
+
+	clock_t time_ed = clock();
+	cout << "Time: " << time_ed - time_st << "ms" << endl;
 
 }
