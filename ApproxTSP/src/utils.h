@@ -12,7 +12,9 @@ using namespace std;
 
 void readArgs(int argc, char** argv, int &dataId, int &alpha, int &beta );
 
-void readMatrix( int n, int dataId, vector< vector<double> > &mat );
+void readMatrix( int N, int dataId, vector< vector<double> > &mat );
+
+void showSolution( int N, int dataId );
 
 void findRoute( const vector<int> &visited, vector<int> &route );
 

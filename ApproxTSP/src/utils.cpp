@@ -20,19 +20,38 @@ void readArgs( int argc, char** argv, int &dataId, int &alpha, int &beta ) {
 
 }
 
-void readMatrix( int n, int dataId, vector< vector<double> > &mat ) {
+void readMatrix( int N, int dataId, vector< vector<double> > &mat ) {
 
 	string fileName = "data/real/" + to_string( dataId ) + "/output" + to_string( dataId ) + ".txt";
 	FILE *file = fopen( fileName.c_str(), "r" );
 
-	mat = vector< vector<double> >( n );
-	for ( int r = 0; r < n; r++ ) {
-		mat[r] = vector<double>( n );
-		for ( int c = 0; c < n; c++ ) {
+	mat = vector< vector<double> >( N );
+	for ( int r = 0; r < N; r++ ) {
+		mat[r] = vector<double>( N );
+		for ( int c = 0; c < N; c++ ) {
 			fscanf( file, "%lf", &mat[r][c] );
 		}
 	}
 
+	fclose( file );
+
+}
+
+void showSolution( int N, int dataId ) {
+
+	string fileName = "data/real/" + to_string( dataId ) + "/exhustive search solution" + to_string( dataId ) + ".txt";
+	// debug
+	// cout << fileName << endl;
+	FILE *file = fopen( fileName.c_str(), "r" );
+
+	cout << "Standard Solution: " << endl;
+	cout << "Route: ";
+	for ( int i = 0; i < N; i++ ) {
+		int nodeId;
+		fscanf( file, "%d", &nodeId );
+		cout << " " << nodeId;
+	}
+	cout << endl << endl;
 	fclose( file );
 
 }

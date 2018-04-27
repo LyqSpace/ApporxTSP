@@ -1,6 +1,9 @@
 #include "GreedySearch.h"
 
 GreedySearch::GreedySearch( const vector< vector<double> > &_adjMat, int _N, int _alpha, int _beta ) {
+
+	cout << "Greedy Search: " << endl;
+
 	adjMat = _adjMat;
 	N = _N;
 	alpha = _alpha;

@@ -1,6 +1,9 @@
 #include "AlphaBetaPruning.h"
 
 AlphaBetaPruning::AlphaBetaPruning( const vector< vector<double> > &_adjMat, int _N, int _alpha, int _beta ) {
+
+	cout << "Alpha-Beta Pruning: " << endl;
+
 	adjMat = _adjMat;
 	N = _N;
 	alpha = _alpha;
